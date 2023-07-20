@@ -18,13 +18,15 @@ class MoviesSeeder extends Seeder
             "description" => "Adalah sebuah film horor Indonesia tahun 2022 yang disutradarai dan ditulis oleh Joko Anwar sebagai sekuel dari film tahun 2017, Pengabdi Setan.",
             "rating" => 7.0,
             "image" => "",
-            "created_at" => now()
+            "created_at" => now(),
+            "updated_at" => now(),
         ], [
             "title" => "Pengabdi Setan",
             "description" => "",
             "rating" => 8.5,
             "image" => "",
-            "created_at" => now()
+            "created_at" => now(),
+            "updated_at" => now(),
         ]];
 
         DB::table('movies')->insert($data);

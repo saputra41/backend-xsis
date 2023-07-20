@@ -143,8 +143,6 @@ class MoviesController extends Controller
         $validatedData = $request->only(["title", "description", "rating"]);
         $existingMovie = Movies::find($id);
         $oldMovie = $existingMovie;
-        $validatedData["image"] = $existingMovie->image;
-
 
         if ($id && !$existingMovie) {
             $response = [
@@ -173,6 +171,8 @@ class MoviesController extends Controller
             if (isset($oldMovie->image)) {
                 ImageHelper::deleteImage("upload/images/" . $oldMovie->image);
             }
+        } else {
+            $validatedData["image"] = $existingMovie->image;
         }
 
         try {
